@@ -974,12 +974,12 @@
         .faq-list {
             list-style: none;
         }
-        
+
         .faq-item {
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             padding: 1.5rem 0;
         }
-        
+
         .faq-question {
             font-weight: 600;
             font-size: 1.05rem;
@@ -988,10 +988,46 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: color 0.3s ease;
         }
-        
+
         .faq-question:hover {
             color: var(--crimson);
+        }
+
+        .faq-question .faq-icon {
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--crimson);
+        }
+
+        .faq-item.active .faq-question .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 1rem;
+        }
+
+        .faq-answer p {
+            margin-bottom: 0.75rem;
+        }
+
+        .faq-answer p:last-child {
+            margin-bottom: 0;
         }
         
         /* Footer */
@@ -1746,70 +1782,78 @@
                     <p>Everything you need to know about Send&Scale services.</p>
                     
                     <ul class="faq-list">
-                        <li class="faq-item">
+                        <li class="faq-item active">
                             <div class="faq-question">
-                                <span>What makes Send&Scale unique?</span>
-                                <span style="color: var(--text-gray);">↓</span>
+                                <span>What do you actually do?</span>
+                                <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We help you with all aspects of your newsletter. From foundational setup through content to growth, monetization, and optimization. In short, we offer a done-for-you newsletter management service where we take care of newsletters you publish, growth of your newsletter, creating funnels to turn it into a revenue-generating asset, and boring but important things like keeping your email software organized and your email list clean and healthy.</p>
                             </div>
                         </li>
                         <li class="faq-item">
                             <div class="faq-question">
-                                <span>What do you actually do?</span>
-                                <span style="color: var(--text-gray);">↓</span>
+                                <span>What makes Send&Scale unique?</span>
+                                <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p>While most "email guys" just write emails for you, and most email agencies just help you grow your newsletter, we do everything. At Send&Scale, we approach newsletters holistically and are able to help you with every aspect of your newsletter, from content to growth and monetization. And we've implemented our newsletter systems for the biggest creators and founders out there.</p>
                             </div>
                         </li>
                         <li class="faq-item">
                             <div class="faq-question">
                                 <span>How long does it take to implement your services?</span>
-                                <span style="color: var(--text-gray);">↓</span>
+                                <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Everything depends on your needs and your current setup. On average, it takes about 3 months to implement, test, and optimize the entire newsletter system.</p>
+                                <p>Yet, most of our clients stay with us for far longer as they enjoy the full management of their newsletter.</p>
                             </div>
                         </li>
                         <li class="faq-item">
                             <div class="faq-question">
                                 <span>What's the price?</span>
-                                <span style="color: var(--text-gray);">↓</span>
+                                <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We approach every client individually. We also start with a free strategy call to best understand your needs and goals regarding your newsletter and business, and to also assess what needs to be implemented.</p>
+                                <p>If you're interested in our services, then the best option is to hop on a quick 15-minute call - even if you're not sure about the price - we'll try to help either way.</p>
                             </div>
                         </li>
                         <li class="faq-item">
                             <div class="faq-question">
                                 <span>Is there a guarantee?</span>
-                                <span style="color: var(--text-gray);">↓</span>
+                                <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Of course. Before we kick off our partnership, we set mutually agreed KPIs. If we don't hit them for reasons solely dependent on our work, you get every single penny back.</p>
                             </div>
                         </li>
                         <li class="faq-item">
                             <div class="faq-question">
-                                <span>How do I know that I will get a return on my investment?</span>
-                                <span style="color: var(--text-gray);">↓</span>
+                                <span>What kind of results have other people seen?</span>
+                                <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
                             </div>
-                        </li>
-                        <li class="faq-item">
-                            <div class="faq-question">
-                                <span>What if I don't have a product/service to sell?</span>
-                                <span style="color: var(--text-gray);">↓</span>
-                            </div>
-                        </li>
-                        <li class="faq-item">
-                            <div class="faq-question">
-                                <span>What size and type of YouTube channels is this best suited for?</span>
-                                <span style="color: var(--text-gray);">↓</span>
-                            </div>
-                        </li>
-                        <li class="faq-item">
-                            <div class="faq-question">
-                                <span>What kind of results have other creators seen?</span>
-                                <span style="color: var(--text-gray);">↓</span>
+                            <div class="faq-answer">
+                                <p>You can check out our case study section but in short, we've helped Ali Abdaal grow his newsletter to over 700,000 subscribers and turn it into his main source of revenue (over $3M generated). We've also helped Lara Acosta generate over $300,000 from her newsletter, or Kleo grow their user base to over 1,100 ($100k+ MRR).</p>
                             </div>
                         </li>
                         <li class="faq-item">
                             <div class="faq-question">
                                 <span>Do you handle the technical setup?</span>
-                                <span style="color: var(--text-gray);">↓</span>
+                                <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes - no matter which ESP you use (Beehiiv, Kit, HubSpot, etc.), we take care of your technical setup - scripts, forms, sender settings, forms, tags, and custom fields. We do it all.</p>
                             </div>
                         </li>
                         <li class="faq-item">
                             <div class="faq-question">
                                 <span>How involved do I need to be in the process?</span>
-                                <span style="color: var(--text-gray);">↓</span>
+                                <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We strive to limit your involvement to giving us feedback and, at first, providing all the necessary data and access we need. Yet, we try to make it as hands-off experience for you as possible.</p>
                             </div>
                         </li>
                     </ul>
@@ -1867,6 +1911,14 @@
 
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
         });
     </script>
 </body>
