@@ -506,10 +506,7 @@
         }
         
         .services-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            max-width: 800px;
         }
         
         .services-text h2 {
@@ -546,6 +543,16 @@
         }
         
         /* Testimonials */
+        .testimonials-section {
+            padding: 6rem 2rem;
+            background: var(--darker-bg);
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .testimonials-stack {
             display: flex;
             flex-direction: column;
@@ -1337,67 +1344,73 @@
                     </ul>
                     <a href="#contact" class="cta-button" style="padding: 1rem 2rem; font-size: 1rem;">Take The FIRST Step</a>
                 </div>
-                <div class="testimonials-stack">
-                    <!-- Testimonial 1: Lara Acosta -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <div class="testimonial-header">
-                                <h4>Lara Acosta</h4>
-                                <p>That's Literally It</p>
-                            </div>
-                            <ul class="testimonial-bullets">
-                                <li>First $230,000 launch</li>
-                                <li>Grew Kleo to 1,158+ customers ($100K+ MRR)</li>
-                            </ul>
-                            <div class="testimonial-screenshot">
-                                <img src="https://i.ibb.co/ZpKbB5Mn/Screenshot-2026-02-02-at-19-26-20.png" alt="Lara Acosta testimonial">
-                            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <div class="testimonials-stack">
+                <!-- Testimonial 1: Lara Acosta -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-header">
+                            <h4>Lara Acosta</h4>
+                            <p>That's Literally It</p>
                         </div>
-                        <div class="testimonial-main-image">
-                            <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/publication/thumbnail/a24ef26f-09dc-49d1-b3cd-5904bdde89da/landscape_Book_a_11_call_with_me__9_.png" alt="Lara Acosta">
+                        <ul class="testimonial-bullets">
+                            <li>First $230,000 launch</li>
+                            <li>Grew Kleo to 1,158+ customers ($100K+ MRR)</li>
+                        </ul>
+                        <div class="testimonial-screenshot">
+                            <img src="https://i.ibb.co/ZpKbB5Mn/Screenshot-2026-02-02-at-19-26-20.png" alt="Lara Acosta testimonial">
                         </div>
                     </div>
+                    <div class="testimonial-main-image">
+                        <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/publication/thumbnail/a24ef26f-09dc-49d1-b3cd-5904bdde89da/landscape_Book_a_11_call_with_me__9_.png" alt="Lara Acosta">
+                    </div>
+                </div>
 
-                    <!-- Testimonial 2: Jeff Su -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <div class="testimonial-header">
-                                <h4>Jeff Su</h4>
-                                <p>Google Workspace</p>
-                            </div>
-                            <ul class="testimonial-bullets">
-                                <li>Migration from Ghost to Kit</li>
-                                <li>All email flows automated</li>
-                                <li>1st-party data collection engine</li>
-                            </ul>
-                            <div class="testimonial-screenshot">
-                                <img src="https://i.ibb.co/7xnxByw/Screenshot-2026-02-02-at-19-26-55.png" alt="Jeff Su testimonial">
-                            </div>
+                <!-- Testimonial 2: Jeff Su -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-header">
+                            <h4>Jeff Su</h4>
+                            <p>Google Workspace</p>
                         </div>
-                        <div class="testimonial-main-image">
-                            <img src="https://www.jeffsu.org/content/images/size/w660/2024/03/Studio-Room-1.png" alt="Jeff Su">
+                        <ul class="testimonial-bullets">
+                            <li>Migration from Ghost to Kit</li>
+                            <li>All email flows automated</li>
+                            <li>1st-party data collection engine</li>
+                        </ul>
+                        <div class="testimonial-screenshot">
+                            <img src="https://i.ibb.co/7xnxByw/Screenshot-2026-02-02-at-19-26-55.png" alt="Jeff Su testimonial">
                         </div>
                     </div>
+                    <div class="testimonial-main-image">
+                        <img src="https://www.jeffsu.org/content/images/size/w660/2024/03/Studio-Room-1.png" alt="Jeff Su">
+                    </div>
+                </div>
 
-                    <!-- Testimonial 3: Part-Time YouTuber Academy -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <div class="testimonial-header">
-                                <h4>Part-Time YouTuber Academy</h4>
-                                <p>Creator Notes</p>
-                            </div>
-                            <ul class="testimonial-bullets">
-                                <li>5 sold-out cohorts</li>
-                                <li>First $2M launch</li>
-                                <li>Over $1M+ generated through BFCM campaign</li>
-                            </ul>
-                            <div class="testimonial-screenshot">
-                                <img src="https://i.ibb.co/QjzBY0b/IMG-3213.jpg" alt="PTYA testimonial">
-                            </div>
+                <!-- Testimonial 3: Part-Time YouTuber Academy -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-header">
+                            <h4>Part-Time YouTuber Academy</h4>
+                            <p>Creator Notes</p>
                         </div>
-                        <div class="testimonial-main-image">
-                            <img src="https://aliabdaal.com/wp-content/uploads/2025/02/ali-abdaal-part-time-youtuber-academy-logo.png" alt="Part-Time YouTuber Academy">
+                        <ul class="testimonial-bullets">
+                            <li>5 sold-out cohorts</li>
+                            <li>First $2M launch</li>
+                            <li>Over $1M+ generated through BFCM campaign</li>
+                        </ul>
+                        <div class="testimonial-screenshot">
+                            <img src="https://i.ibb.co/QjzBY0b/IMG-3213.jpg" alt="PTYA testimonial">
                         </div>
+                    </div>
+                    <div class="testimonial-main-image">
+                        <img src="https://aliabdaal.com/wp-content/uploads/2025/02/ali-abdaal-part-time-youtuber-academy-logo.png" alt="Part-Time YouTuber Academy">
                     </div>
                 </div>
             </div>
