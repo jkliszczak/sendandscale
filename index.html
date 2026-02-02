@@ -104,7 +104,7 @@
         
         .cta-button {
             background: var(--crimson);
-            color: var(--text-white);
+            color: #ffffff !important;
             padding: 0.65rem 1.5rem;
             border-radius: 6px;
             font-weight: 600;
@@ -977,7 +977,15 @@
 
         .faq-item {
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 1.5rem 0;
+            padding: 1.5rem;
+            margin: 0 -1.5rem;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-item.active {
+            background: rgba(220, 20, 60, 0.08);
+            border-bottom: 1px solid transparent;
         }
 
         .faq-question {
