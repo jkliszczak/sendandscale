@@ -1150,26 +1150,52 @@
             .nav-links a {
                 display: none;
             }
-            
+
             .hero {
                 padding: 8rem 1.5rem 3rem;
             }
-            
+
+            .hero-cta {
+                flex-direction: column;
+                width: 100%;
+                max-width: 320px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-cta .primary,
+            .hero-cta .secondary {
+                width: 100%;
+                text-align: center;
+                padding: 1rem 2rem;
+                font-weight: 700;
+                font-size: 1rem;
+            }
+
             .logo-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
-            
+
             .card-grid,
             .proof-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .stats-grid {
                 grid-template-columns: 1fr;
             }
+
+            .faq-item {
+                margin: 0;
+                padding: 1.25rem 1rem;
+            }
+
+            .faq-question {
+                font-size: 0.95rem;
+            }
         }
-        
+
         /* Animations */
         .fade-in {
             opacity: 0;
@@ -1925,7 +1951,17 @@
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const faqItem = question.parentElement;
-                faqItem.classList.toggle('active');
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't already active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
             });
         });
     </script>
