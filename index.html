@@ -1069,6 +1069,7 @@
             .timeline-item {
                 display: block !important;
                 margin-bottom: 2rem;
+                position: relative;
             }
 
             .timeline-item .timeline-empty {
@@ -1078,7 +1079,11 @@
             .timeline-item .timeline-icon {
                 width: 56px;
                 height: 56px;
-                margin: 0 auto 1rem;
+                position: absolute;
+                top: 1.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 2;
             }
 
             .timeline-item .timeline-icon svg {
@@ -1088,6 +1093,7 @@
 
             .timeline-item .timeline-content {
                 text-align: center;
+                padding-top: 5rem;
             }
             
             .footer-content {
