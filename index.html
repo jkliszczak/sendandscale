@@ -1065,22 +1065,29 @@
             .timeline::before {
                 display: none;
             }
-            
+
             .timeline-item {
-                grid-template-columns: auto 1fr !important;
-                gap: 1rem;
+                display: block !important;
+                margin-bottom: 2rem;
             }
-            
+
             .timeline-item .timeline-empty {
                 display: none;
             }
-            
+
             .timeline-item .timeline-icon {
-                grid-column: 1 !important;
+                width: 56px;
+                height: 56px;
+                margin: 0 auto 1rem;
             }
-            
+
+            .timeline-item .timeline-icon svg {
+                width: 28px;
+                height: 28px;
+            }
+
             .timeline-item .timeline-content {
-                grid-column: 2 !important;
+                text-align: center;
             }
             
             .footer-content {
