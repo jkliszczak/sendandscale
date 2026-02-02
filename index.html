@@ -272,7 +272,7 @@
         
         /* Video Section */
         .video-section {
-            padding: 4rem 2rem;
+            padding: 2rem 2rem 4rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -545,18 +545,102 @@
             height: 24px;
         }
         
-        .team-image {
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        /* Testimonials */
+        .testimonials-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
         }
-        
-        .team-image img {
+
+        .testimonial-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .testimonial-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .testimonial-header h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-header p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        .testimonial-bullets {
+            list-style: none;
+        }
+
+        .testimonial-bullets li {
+            font-size: 0.9rem;
+            color: var(--text-light-gray);
+            padding: 0.25rem 0;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .testimonial-bullets li::before {
+            content: "✓";
+            color: var(--crimson);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .testimonial-screenshot {
+            margin-top: 0.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial-screenshot img {
             width: 100%;
             height: auto;
             display: block;
         }
-        
+
+        .testimonial-main-image {
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .testimonial-main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Problem/Solution Section */
         .problem-solution-section {
             padding: 6rem 2rem;
@@ -1253,8 +1337,68 @@
                     </ul>
                     <a href="#contact" class="cta-button" style="padding: 1rem 2rem; font-size: 1rem;">Take The FIRST Step</a>
                 </div>
-                <div class="team-image">
-                    <img src="https://sendandscale.co/untitled-640-x-900-px_nw_6a4a649c.png" alt="Team Collage">
+                <div class="testimonials-stack">
+                    <!-- Testimonial 1: Lara Acosta -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="testimonial-header">
+                                <h4>Lara Acosta</h4>
+                                <p>That's Literally It</p>
+                            </div>
+                            <ul class="testimonial-bullets">
+                                <li>First $230,000 launch</li>
+                                <li>Grew Kleo to 1,158+ customers ($100K+ MRR)</li>
+                            </ul>
+                            <div class="testimonial-screenshot">
+                                <img src="https://i.ibb.co/ZpKbB5Mn/Screenshot-2026-02-02-at-19-26-20.png" alt="Lara Acosta testimonial">
+                            </div>
+                        </div>
+                        <div class="testimonial-main-image">
+                            <img src="https://beehiiv-images-production.s3.amazonaws.com/uploads/publication/thumbnail/a24ef26f-09dc-49d1-b3cd-5904bdde89da/landscape_Book_a_11_call_with_me__9_.png" alt="Lara Acosta">
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2: Jeff Su -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="testimonial-header">
+                                <h4>Jeff Su</h4>
+                                <p>Google Workspace</p>
+                            </div>
+                            <ul class="testimonial-bullets">
+                                <li>Migration from Ghost to Kit</li>
+                                <li>All email flows automated</li>
+                                <li>1st-party data collection engine</li>
+                            </ul>
+                            <div class="testimonial-screenshot">
+                                <img src="https://i.ibb.co/7xnxByw/Screenshot-2026-02-02-at-19-26-55.png" alt="Jeff Su testimonial">
+                            </div>
+                        </div>
+                        <div class="testimonial-main-image">
+                            <img src="https://www.jeffsu.org/content/images/size/w660/2024/03/Studio-Room-1.png" alt="Jeff Su">
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3: Part-Time YouTuber Academy -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="testimonial-header">
+                                <h4>Part-Time YouTuber Academy</h4>
+                                <p>Creator Notes</p>
+                            </div>
+                            <ul class="testimonial-bullets">
+                                <li>5 sold-out cohorts</li>
+                                <li>First $2M launch</li>
+                                <li>Over $1M+ generated through BFCM campaign</li>
+                            </ul>
+                            <div class="testimonial-screenshot">
+                                <img src="https://i.ibb.co/QjzBY0b/IMG-3213.jpg" alt="PTYA testimonial">
+                            </div>
+                        </div>
+                        <div class="testimonial-main-image">
+                            <img src="https://aliabdaal.com/wp-content/uploads/2025/02/ali-abdaal-part-time-youtuber-academy-logo.png" alt="Part-Time YouTuber Academy">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
