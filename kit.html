@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send &amp; Scale Kit – Complete Newsletter System on Kit</title>
+    <meta name="description" content="Build a complete newsletter system on Kit optimized for growth, nurturing, and monetization. Trusted by Ali Abdaal, Jeff Su, and more.">
+    <link rel="icon" type="image/png" href="https://i.ibb.co/C5HmR4kw/Crimson-and-Black-Newsletter-Growth-Logo-4.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        :root{--crimson:#DC143C;--dark-bg:#0a0a0a;--darker-bg:#050505;--text-white:#ffffff;--text-gray:#a8a8a8;--text-light-gray:#e0e0e0;--accent-glow:rgba(220,20,60,0.15)}
+        body{font-family:'Manrope',sans-serif;background:var(--dark-bg);color:var(--text-white);line-height:1.6;overflow-x:hidden}
+        .serif{font-family:'Instrument Serif',serif}
+        header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,10,10,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.05);animation:slideDown 0.6s ease-out}
+        @keyframes slideDown{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}
+        nav{max-width:1400px;margin:0 auto;padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-size:1.4rem;font-weight:800;letter-spacing:-0.02em;text-decoration:none;color:var(--text-white)}
+        .logo-accent{color:var(--crimson)}
+        .nav-links{display:flex;gap:2rem;align-items:center}
+        .nav-links a{color:var(--text-gray);text-decoration:none;font-weight:500;font-size:0.95rem;transition:color 0.3s ease}
+        .nav-links a:hover{color:var(--text-white)}
+        .cta-button{background:var(--crimson);color:#fff!important;padding:0.65rem 1.5rem;border-radius:6px;font-weight:600;font-size:0.9rem;transition:all 0.3s ease;text-decoration:none;display:inline-block}
+        .cta-button:hover{transform:translateY(-2px);box-shadow:0 8px 24px var(--accent-glow)}
+        .hero{min-height:90vh;display:flex;align-items:center;justify-content:center;position:relative;padding:10rem 2rem 6rem;overflow:hidden}
+        .hero-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;background:radial-gradient(circle,var(--accent-glow) 0%,transparent 70%);opacity:0.4;animation:pulse 4s ease-in-out infinite}
+        @keyframes pulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:0.4}50%{transform:translate(-50%,-50%) scale(1.1);opacity:0.6}}
+        .hero-content{max-width:1000px;text-align:center;position:relative;z-index:1;animation:fadeInUp 0.8s ease-out 0.2s both}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        .hero-badge{display:inline-block;background:rgba(220,20,60,0.1);border:1px solid rgba(220,20,60,0.3);color:var(--crimson);padding:0.5rem 1.2rem;border-radius:30px;font-size:0.85rem;font-weight:600;margin-bottom:2rem;letter-spacing:0.5px}
+        .hero h1{font-size:clamp(2.5rem,5.5vw,4.2rem);font-weight:800;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-0.03em}
+        .highlight{color:var(--crimson)}
+        .hero-subtitle{font-size:clamp(1.05rem,2vw,1.25rem);color:var(--text-gray);max-width:750px;margin:0 auto 2.5rem;line-height:1.7}
+        .hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeInUp 0.8s ease-out 0.4s both}
+        .btn-primary{background:var(--crimson);color:#fff;padding:1rem 2.5rem;border-radius:8px;font-weight:700;font-size:1rem;transition:all 0.3s ease;text-decoration:none;display:inline-block}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 32px var(--accent-glow)}
+        .btn-secondary{background:transparent;color:#fff;padding:1rem 2.5rem;border-radius:8px;font-weight:600;font-size:1rem;border:1px solid rgba(255,255,255,0.2);transition:all 0.3s ease;text-decoration:none;display:inline-block}
+        .btn-secondary:hover{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.4)}
+        .section-badge{display:inline-block;background:rgba(220,20,60,0.15);padding:0.5rem 1.5rem;border-radius:8px;margin-bottom:1.5rem}
+        .section-badge span{color:var(--crimson);font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:1.5px}
+        .section-header{text-align:center;margin-bottom:4rem}
+        .section-header h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:1rem;line-height:1.2}
+        .section-header p{font-size:1.1rem;color:var(--text-gray);max-width:700px;margin:0 auto;line-height:1.7}
+        .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease-out,transform 0.6s ease-out}
+        .fade-in.visible{opacity:1;transform:translateY(0)}
+        .card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2.5rem;transition:all 0.3s ease}
+        .card:hover{background:rgba(255,255,255,0.04);border-color:rgba(220,20,60,0.3);transform:translateY(-5px)}
+        .num-circle{width:48px;height:48px;background:var(--crimson);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;color:#fff;flex-shrink:0}
+        .checkmark-list{list-style:none;margin:1rem 0 1.5rem}
+        .checkmark-list li{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.75rem;color:var(--text-light-gray);font-size:0.95rem}
+        .checkmark-list li::before{content:"✓";color:var(--crimson);font-weight:700;flex-shrink:0}
+        footer{background:var(--darker-bg);border-top:1px solid rgba(255,255,255,0.05);padding:4rem 2rem 2rem}
+        .footer-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;margin-bottom:3rem}
+        .footer-logo{font-size:1.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:1rem}
+        .footer-section h3{color:var(--crimson);font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1rem}
+        .footer-section a{display:block;color:var(--text-gray);text-decoration:none;font-size:0.9rem;margin-bottom:0.5rem;transition:color 0.3s ease}
+        .footer-section a:hover{color:var(--text-white)}
+        .footer-bottom{max-width:1200px;margin:0 auto;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.05);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.85rem;color:var(--text-gray)}
+        @media(max-width:768px){.nav-links{display:none}.footer-content{grid-template-columns:1fr;gap:2rem}.hero{padding:8rem 1.5rem 4rem}}
+    </style>
+</head>
+<body>
+<!-- HEADER -->
+<header>
+    <nav>
+        <a href="/" class="logo"><span class="logo-accent">Send</span>&amp;<span>Scale</span></a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#case-study">Case Studies</a>
+            <a href="/#services-offerings">Services</a>
+            <a href="#book-call" class="cta-button">Book a Strategy Call</a>
+        </div>
+    </nav>
+</header>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+        <div class="hero-badge">DONE-FOR-YOU &middot; KIT SPECIALISTS</div>
+        <h1>Build a <span class="highlight serif" style="font-style:italic">Complete Newsletter System</span><br>on Kit &mdash; Optimized for Growth,<br>Nurturing &amp; Monetization</h1>
+        <p class="hero-subtitle">We've used this exact system to add over 1M subscribers and generate $5M+ in revenue for our clients. Now we'll build it for you &mdash; in under 12 weeks.</p>
+        <div class="hero-cta">
+            <a href="#book-call" class="btn-primary">Book a Free Strategy Call</a>
+            <a href="#system" class="btn-secondary">See How It Works</a>
+        </div>
+    </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section style="padding:3.5rem 2rem;background:var(--darker-bg);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05)">
+    <div style="max-width:1000px;margin:0 auto;text-align:center">
+        <p style="font-size:0.85rem;font-weight:600;color:var(--text-gray);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:2rem">Trusted by top creators &amp; entrepreneurs</p>
+        <div style="display:flex;gap:3rem;align-items:center;justify-content:center;flex-wrap:wrap">
+            <span style="font-size:1.3rem;font-weight:800;color:rgba(255,255,255,0.5)">Ali Abdaal</span>
+            <span style="font-size:1.3rem;font-weight:800;color:rgba(255,255,255,0.5)">Jeff Su</span>
+            <span style="font-size:1.3rem;font-weight:800;color:rgba(255,255,255,0.5)">DMS</span>
+            <span style="font-size:1.3rem;font-weight:800;color:rgba(255,255,255,0.5)">Literally Academy</span>
+            <span style="font-size:1.3rem;font-weight:800;color:rgba(255,255,255,0.5)">THRST</span>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT JAKUB -->
+<section style="padding:7rem 2rem;background:linear-gradient(135deg,rgba(220,20,60,0.04) 0%,transparent 100%)">
+    <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center">
+        <div class="fade-in">
+            <div class="section-badge"><span>ABOUT</span></div>
+            <h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;margin-bottom:1.5rem;line-height:1.2">Hi, I'm Jakub, <span style="color:var(--crimson)">founder of Send&amp;Scale.</span></h2>
+            <p style="color:var(--text-gray);line-height:1.8;margin-bottom:1.25rem">I spent the last 7+ years working with newsletters, which weirdly became my passion.</p>
+            <p style="color:var(--text-gray);line-height:1.8;margin-bottom:1.25rem">I've been able to produce over 1,000,000 newsletter subscribers and more than $7M in revenue for various businesses and creators including Ali Abdaal and Mike Thurston.</p>
+            <p style="color:var(--text-gray);line-height:1.8;margin-bottom:1.25rem">This is what I do all day, every day. I've helped creators and businesses grow lists to hundreds of thousands of subscribers.</p>
+            <p style="color:var(--text-light-gray);line-height:1.8;font-weight:600;margin-bottom:2rem">You're not hiring a freelancer. You're bringing in a partner who treats your business like his own.</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.25rem"><div style="font-size:1.8rem;font-weight:800;color:var(--crimson);margin-bottom:0.25rem">8M+</div><div style="font-size:0.85rem;color:var(--text-gray)">YouTube Subscribers reached</div></div>
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.25rem"><div style="font-size:1.8rem;font-weight:800;color:var(--crimson);margin-bottom:0.25rem">1M+</div><div style="font-size:0.85rem;color:var(--text-gray)">Email Subscribers produced</div></div>
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.25rem"><div style="font-size:1.8rem;font-weight:800;color:var(--crimson);margin-bottom:0.25rem">15+</div><div style="font-size:0.85rem;color:var(--text-gray)">Newsletter Funnels Built</div></div>
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.25rem"><div style="font-size:1.8rem;font-weight:800;color:var(--crimson);margin-bottom:0.25rem">$5M+</div><div style="font-size:0.85rem;color:var(--text-gray)">Revenue Generated</div></div>
+            </div>
+        </div>
+        <div class="fade-in" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:3rem;text-align:center">
+            <div style="width:120px;height:120px;background:rgba(220,20,60,0.1);border:3px solid var(--crimson);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:3rem">👋</div>
+            <div style="font-size:1.4rem;font-weight:800;margin-bottom:0.5rem">Jakub Kliszczak</div>
+            <div style="color:var(--crimson);font-weight:600;font-size:0.9rem;margin-bottom:1.5rem">Founder, Send&amp;Scale</div>
+            <div style="color:var(--text-gray);font-size:0.9rem;line-height:1.7">Newsletter specialist trusted by some of the world's top educational creators and entrepreneurs.</div>
+        </div>
+    </div>
+</section>
+<!-- WHY EMAIL -->
+<section style="padding:7rem 2rem;background:var(--darker-bg)">
+    <div style="max-width:1200px;margin:0 auto">
+        <div class="section-header fade-in">
+            <div class="section-badge"><span>WHY EMAIL</span></div>
+            <h2>Why You Need To Go All In On <span style="color:var(--crimson)">Email Newsletter</span></h2>
+            <p>Social platforms are rented land. Email is the only channel where you own the relationship.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem">
+            <div class="card fade-in">
+                <div class="num-circle" style="margin-bottom:1.5rem">1</div>
+                <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:1rem">Own Your Audience &amp; Stop Relying on Algorithms</h3>
+                <p style="color:var(--text-gray);line-height:1.7;font-size:0.95rem">Without email, you're starting from zero every single month. You need to build a bridge between your content and your offer using a strategically designed email system. With a newsletter, you get full control &mdash; contact your subscribers whenever and however you want, without competing with algorithms, advertisers, and ever-changing policies.</p>
+            </div>
+            <div class="card fade-in">
+                <div class="num-circle" style="margin-bottom:1.5rem">2</div>
+                <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:1rem">Get 1st-Party Data &amp; Personalise Your Offers</h3>
+                <p style="color:var(--text-gray);line-height:1.7;font-size:0.95rem">Good luck running polls or asking your viewers for feedback in the comments. With an email newsletter, you can get 1st-party data directly from your subscribers right when they subscribe. Use this data to immediately turn them into buyers and create better content that actually resonates.</p>
+            </div>
+            <div class="card fade-in">
+                <div class="num-circle" style="margin-bottom:1.5rem">3</div>
+                <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:1rem">Generate Revenue Behind The Scenes Without Being Salesy</h3>
+                <p style="color:var(--text-gray);line-height:1.7;font-size:0.95rem">Selling your products in videos and posts can feel like a chore &mdash; and your audience can tell. With email, you generate revenue without ever having to shout out your products in your content. And the conversion rate is over <strong style="color:var(--text-white)">10x higher</strong> compared to other channels.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- THE SYSTEM -->
+<section style="padding:7rem 2rem" id="system">
+    <div style="max-width:1200px;margin:0 auto">
+        <div class="section-header fade-in">
+            <div class="section-badge"><span>OUR SYSTEM</span></div>
+            <h2>The Exact System That's Added <span style="color:var(--crimson)">1M+ Subscribers</span> &amp; Generated <span style="color:var(--crimson)">$5M+</span></h2>
+            <p>Built in under 12 weeks. Fully automated. Optimized for your audience on Kit.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem">
+            <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem;display:flex;gap:1.25rem;align-items:flex-start;transition:all 0.3s ease" class="fade-in">
+                <div class="num-circle">1</div>
+                <div><h3 style="font-size:1.05rem;font-weight:700;margin-bottom:0.6rem">Newsletter with a Strong, Unique Value Proposition</h3><p style="color:var(--text-gray);font-size:0.9rem;line-height:1.7">We create a newsletter with a strong, unique value proposition that becomes a no-brainer decision for your viewers and followers to opt in.</p></div>
+            </div>
+            <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem;display:flex;gap:1.25rem;align-items:flex-start;transition:all 0.3s ease" class="fade-in">
+                <div class="num-circle">2</div>
+                <div><h3 style="font-size:1.05rem;font-weight:700;margin-bottom:0.6rem">High-Converting Lead Magnets</h3><p style="color:var(--text-gray);font-size:0.9rem;line-height:1.7">We ideate and create high-converting lead magnets aligned with your content buckets, increasing conversion rates by 20&ndash;30% compared to a generic opt-in page.</p></div>
+            </div>
+            <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem;display:flex;gap:1.25rem;align-items:flex-start;transition:all 0.3s ease" class="fade-in">
+                <div class="num-circle">3</div>
+                <div><h3 style="font-size:1.05rem;font-weight:700;margin-bottom:0.6rem">Post-Subscription Surveys</h3><p style="color:var(--text-gray);font-size:0.9rem;line-height:1.7">We survey your subscribers right when they join &mdash; when they're most active and engaged. This data personalises their journey and powers future campaigns and product launches.</p></div>
+            </div>
+            <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem;display:flex;gap:1.25rem;align-items:flex-start;transition:all 0.3s ease" class="fade-in">
+                <div class="num-circle">4</div>
+                <div><h3 style="font-size:1.05rem;font-weight:700;margin-bottom:0.6rem">Custom Offers &amp; Monetization</h3><p style="color:var(--text-gray);font-size:0.9rem;line-height:1.7">With data from your subscribers, we show personalised offers at the right moment &mdash; from a $27 low-ticket product to a $5,000/month package. Every journey is customised.</p></div>
+            </div>
+            <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem;display:flex;gap:1.25rem;align-items:flex-start;transition:all 0.3s ease" class="fade-in">
+                <div class="num-circle">5</div>
+                <div><h3 style="font-size:1.05rem;font-weight:700;margin-bottom:0.6rem">Growth Flywheels</h3><p style="color:var(--text-gray);font-size:0.9rem;line-height:1.7">Once the foundation is in place, we activate referral programs, recommendation networks, and paid media &mdash; all profitable from day 1 thanks to the monetisation engine already running.</p></div>
+            </div>
+            <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem;display:flex;gap:1.25rem;align-items:flex-start;transition:all 0.3s ease" class="fade-in">
+                <div class="num-circle">6</div>
+                <div><h3 style="font-size:1.05rem;font-weight:700;margin-bottom:0.6rem">Automated Sequences &amp; Email Flows</h3><p style="color:var(--text-gray);font-size:0.9rem;line-height:1.7">The entire system is fully automated. No manual sending, no tinkering with sequences. It works 24/7 to bring in a steady flow of engaged subscribers, 1st-party data, and revenue.</p></div>
+            </div>
+        </div>
+        <div class="fade-in" style="margin-top:3rem;padding:1.5rem 2rem;background:rgba(220,20,60,0.06);border:1px solid rgba(220,20,60,0.2);border-radius:12px;color:var(--text-light-gray);font-size:0.95rem;line-height:1.7;text-align:center">
+            For most creators, it takes years to build the optimal newsletter setup. With the right approach and know-how, we build a complete newsletter system in <strong>less than 12 weeks</strong> &mdash; fully optimized to convert views into subscribers and turn them into buyers.
+        </div>
+    </div>
+</section>
+<!-- PHASES -->
+<section style="padding:7rem 2rem;background:var(--darker-bg)" id="phases">
+    <div style="max-width:1200px;margin:0 auto">
+        <div class="section-header fade-in">
+            <div class="section-badge"><span>DELIVERABLES</span></div>
+            <h2>What We Build <span style="color:var(--crimson)">For You</span></h2>
+            <p>Four structured phases that take you from scattered setup to a fully optimised, revenue-generating newsletter machine.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(500px,1fr));gap:2rem">
+            <!-- Phase 1 -->
+            <div class="card fade-in" style="border-radius:20px;padding:2.5rem">
+                <div style="display:flex;align-items:center;gap:1.25rem;margin-bottom:1.5rem">
+                    <div style="width:52px;height:52px;background:rgba(220,20,60,0.12);border:2px solid var(--crimson);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem;color:var(--crimson);flex-shrink:0">1</div>
+                    <div><h3 style="font-size:1.3rem;font-weight:800">Technical Foundation &amp; Optimisation</h3><p style="font-size:0.85rem;color:var(--text-gray)">Setting the groundwork on Kit</p></div>
+                </div>
+                <p style="color:var(--text-gray);font-size:0.95rem;line-height:1.7;margin-bottom:1.5rem">We begin by cleaning up your Kit account and building the right segmentation strategy &mdash; setting the foundation for everything that follows.</p>
+                <ul class="checkmark-list">
+                    <li>Kit cleanup &mdash; tags, segments, automated rules, templates &amp; automations</li>
+                    <li>A new segmentation strategy</li>
+                    <li>Website optimisation for newsletter conversions (inline &amp; pop-up forms)</li>
+                    <li>Creating pages for the post-subscription journey</li>
+                    <li>Re-working your current email templates</li>
+                </ul>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem">
+                    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:1rem"><h4 style="font-size:0.85rem;font-weight:700;margin-bottom:0.4rem">Account Cleanup</h4><p style="font-size:0.8rem;color:var(--text-gray);line-height:1.5">Comprehensive audit and cleanup of existing email infrastructure.</p></div>
+                    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:1rem"><h4 style="font-size:0.85rem;font-weight:700;margin-bottom:0.4rem">Conversion Optimisation</h4><p style="font-size:0.8rem;color:var(--text-gray);line-height:1.5">Strategic form placement, A/B testing, and exit-intent popups.</p></div>
+                    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:1rem"><h4 style="font-size:0.85rem;font-weight:700;margin-bottom:0.4rem">Post-Subscription Flow</h4><p style="font-size:0.8rem;color:var(--text-gray);line-height:1.5">Thank-you pages, confirmation sequences, and welcome flows.</p></div>
+                </div>
+            </div>
+            <!-- Phase 2 -->
+            <div class="card fade-in" style="border-radius:20px;padding:2.5rem">
+                <div style="display:flex;align-items:center;gap:1.25rem;margin-bottom:1.5rem">
+                    <div style="width:52px;height:52px;background:rgba(220,20,60,0.12);border:2px solid var(--crimson);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem;color:var(--crimson);flex-shrink:0">2</div>
+                    <div><h3 style="font-size:1.3rem;font-weight:800">Audience Segmentation &amp; Personalisation</h3><p style="font-size:0.85rem;color:var(--text-gray)">Moving from one-size-fits-all to personalised</p></div>
+                </div>
+                <p style="color:var(--text-gray);font-size:0.95rem;line-height:1.7;margin-bottom:1.5rem">A post-subscription survey unlocks crucial data on your most engaged subscribers so we can provide better value, show relevant offers, and convert at a higher rate.</p>
+                <ul class="checkmark-list">
+                    <li>Provide better, more relevant value to every subscriber</li>
+                    <li>Show them the most relevant offers</li>
+                    <li>Nurture with the most adequate content</li>
+                    <li>Convert at a higher rate using 1st-party data</li>
+                </ul>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem">
+                    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:1rem"><h4 style="font-size:0.85rem;font-weight:700;margin-bottom:0.4rem">Survey Integration</h4><p style="font-size:0.8rem;color:var(--text-gray);line-height:1.5">RightMessage / ScoreApp / Typeform for precise audience data.</p></div>
+                    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:1rem"><h4 style="font-size:0.85rem;font-weight:700;margin-bottom:0.4rem">Data-Driven Offers</h4><p style="font-size:0.8rem;color:var(--text-gray);line-height:1.5">Personalised recommendations based on subscriber behaviour.</p></div>
+                    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:1rem"><h4 style="font-size:0.85rem;font-weight:700;margin-bottom:0.4rem">Segment Onboarding</h4><p style="font-size:0.8rem;color:var(--text-gray);line-height:1.5">Tailored onboarding sequences accelerating time-to-value.</p></div>
+                </div>
+            </div>
+            <!-- Phase 3 -->
+            <div class="card fade-in" style="border-radius:20px;padding:2.5rem">
+                <div style="display:flex;align-items:center;gap:1.25rem;margin-bottom:1.5rem">
+                    <div style="width:52px;height:52px;background:rgba(220,20,60,0.12);border:2px solid var(--crimson);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem;color:var(--crimson);flex-shrink:0">3</div>
+                    <div><h3 style="font-size:1.3rem;font-weight:800">Engagement &amp; Retention Systems</h3><p style="font-size:0.85rem;color:var(--text-gray)">Protecting the quality of your list</p></div>
+                </div>
+                <p style="color:var(--text-gray);font-size:0.95rem;line-height:1.7;margin-bottom:1.5rem">Besides growing your newsletter, we take care of list quality so your sender reputation stays clean and your engagement stays high.</p>
+                <ul class="checkmark-list">
+                    <li>A manual re-engagement campaign targeting low-activity subscribers</li>
+                    <li>An automated system to reactivate cold subscribers and remove them if unresponsive</li>
+                </ul>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem">
+                    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:1rem"><h4 style="font-size:0.85rem;font-weight:700;margin-bottom:0.4rem">Reactivation Campaigns</h4><p style="font-size:0.8rem;color:var(--text-gray);line-height:1.5">Targeted campaign to re-engage cold subscribers before auto-purge.</p></div>
+                    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:1rem"><h4 style="font-size:0.85rem;font-weight:700;margin-bottom:0.4rem">Micro-Survey Integration</h4><p style="font-size:0.8rem;color:var(--text-gray);line-height:1.5">Quick feedback mechanisms in each newsletter for real-time optimisation.</p></div>
+                    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:1rem"><h4 style="font-size:0.85rem;font-weight:700;margin-bottom:0.4rem">Auto-Purging Automation</h4><p style="font-size:0.8rem;color:var(--text-gray);line-height:1.5">Evergreen system that monitors engagement and removes inactives automatically.</p></div>
+                </div>
+            </div>
+            <!-- Phase 4 -->
+            <div class="card fade-in" style="border-radius:20px;padding:2.5rem">
+                <div style="display:flex;align-items:center;gap:1.25rem;margin-bottom:1.5rem">
+                    <div style="width:52px;height:52px;background:rgba(220,20,60,0.12);border:2px solid var(--crimson);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem;color:var(--crimson);flex-shrink:0">4</div>
+                    <div><h3 style="font-size:1.3rem;font-weight:800">Comprehensive Growth Strategy</h3><p style="font-size:0.85rem;color:var(--text-gray)">Activating every growth lever available</p></div>
+                </div>
+                <p style="color:var(--text-gray);font-size:0.95rem;line-height:1.7;margin-bottom:1.5rem">Once the full setup is live, we introduce new growth levers and build on top of your existing resources to scale your list and revenue.</p>
+                <ul class="checkmark-list">
+                    <li>New lead magnets &mdash; quizzes, downloadables, email courses</li>
+                    <li>Dedicated high-converting landing pages</li>
+                    <li>Referral program with a growth flywheel</li>
+                    <li>Creator Network collaborations via Kit's ecosystem</li>
+                    <li>Paid media (Meta ads &amp; paid recommendations) for self-liquidating growth</li>
+                    <li>Content alignment &mdash; lead magnets &amp; call-outs integrated into your content strategy</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- CASE STUDY -->
+<section style="padding:7rem 2rem" id="case-study">
+    <div style="max-width:1100px;margin:0 auto">
+        <div class="section-header fade-in">
+            <div class="section-badge"><span>CASE STUDY</span></div>
+            <h2>Real Results from <span style="color:var(--crimson)">Real Clients</span></h2>
+        </div>
+        <div class="fade-in" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:3rem;margin-bottom:2rem">
+            <h3 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;line-height:1.2;margin-bottom:1.5rem">How We Helped <span style="color:var(--crimson)">Ali Abdaal</span> Get 700,000 Email Subscribers and Over $3,000,000</h3>
+            <p style="color:var(--text-gray);line-height:1.8;margin-bottom:1rem;font-size:0.95rem">When I started working with Ali, he already had a thriving YouTube channel but wasn't fully leveraging his audience. We implemented a full newsletter system to capture and monetise his audience:</p>
+            <ul class="checkmark-list">
+                <li>Creating a newsletter with a clear value proposition</li>
+                <li>Implementing lead magnets that converted at <strong>11x the rate</strong> of a regular email capture</li>
+                <li>Creating automated sequences that drove consistent revenue</li>
+                <li>Implementing smart segmentation to get 1st-party data from his audience</li>
+            </ul>
+            <p style="color:var(--text-gray);line-height:1.8;font-size:0.95rem">Now, Ali has a thriving YouTube channel and a massive list of over 700,000 segmented and qualified buyers he can leverage as much as he wants.</p>
+        </div>
+        <div class="fade-in" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem">
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:1.75rem">
+                <h4 style="font-size:0.85rem;font-weight:600;color:var(--text-gray);margin-bottom:0.75rem;text-transform:uppercase;letter-spacing:0.5px">Email Subscriber Growth</h4>
+                <div style="font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;line-height:1;margin-bottom:0.5rem">769<span style="color:var(--crimson)">,400</span></div>
+                <p style="color:var(--text-gray);font-size:0.85rem">From 5,000 to 700,000+ subscribers in 18 months</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:1.75rem">
+                <h4 style="font-size:0.85rem;font-weight:600;color:var(--text-gray);margin-bottom:0.75rem;text-transform:uppercase;letter-spacing:0.5px">Revenue Growth</h4>
+                <div style="font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;line-height:1;margin-bottom:0.5rem"><span style="color:var(--crimson)">$3M+</span></div>
+                <p style="color:var(--text-gray);font-size:0.85rem">Generated through email marketing campaigns. $866K in a single Black Friday.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:1.75rem">
+                <h4 style="font-size:0.85rem;font-weight:600;color:var(--text-gray);margin-bottom:0.75rem;text-transform:uppercase;letter-spacing:0.5px">Single Campaign Record</h4>
+                <div style="font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;line-height:1;margin-bottom:0.5rem"><span style="color:var(--crimson)">$1.9M</span></div>
+                <p style="color:var(--text-gray);font-size:0.85rem">Revenue generated from a single email campaign</p>
+            </div>
+        </div>
+        <div class="fade-in">
+            <h3 style="font-size:1.5rem;font-weight:800;margin-bottom:2rem;text-align:center">How Did We Drive More Than 700,000 Email Subscribers?</h3>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem">
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:1.75rem">
+                    <div class="num-circle" style="margin-bottom:1rem;width:36px;height:36px;font-size:0.9rem">1</div>
+                    <h4 style="font-size:1rem;font-weight:700;margin-bottom:0.75rem">Strong Newsletter UVP</h4>
+                    <p style="color:var(--text-gray);font-size:0.88rem;line-height:1.7">Most newsletters make generic promises. We crafted a unique value proposition aligned with Ali's audience &mdash; something people genuinely wanted to read.</p>
+                </div>
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:1.75rem">
+                    <div class="num-circle" style="margin-bottom:1rem;width:36px;height:36px;font-size:0.9rem">2</div>
+                    <h4 style="font-size:1rem;font-weight:700;margin-bottom:0.75rem">High-Converting Lead Magnets</h4>
+                    <p style="color:var(--text-gray);font-size:0.88rem;line-height:1.7">By analysing Ali's content buckets, we created unique lead magnets. Our best-performing lead magnet generated over <strong style="color:var(--text-white)">100,000 signups</strong>.</p>
+                </div>
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:1.75rem">
+                    <div class="num-circle" style="margin-bottom:1rem;width:36px;height:36px;font-size:0.9rem">3</div>
+                    <h4 style="font-size:1rem;font-weight:700;margin-bottom:0.75rem">Growth Flywheels</h4>
+                    <p style="color:var(--text-gray);font-size:0.88rem;line-height:1.7">We aligned newsletter strategy with Ali's YouTube and social strategies, and introduced paid media and referral programs to maximise every growth avenue.</p>
+                </div>
+            </div>
+            <div style="margin-top:2.5rem;padding:1.5rem 2rem;background:rgba(220,20,60,0.06);border-left:3px solid var(--crimson);border-radius:0 12px 12px 0;font-style:italic;color:var(--text-light-gray);font-size:1rem;line-height:1.7">
+                "Our email list is way more powerful than having a social media audience, and I would rather have a 500,000 email list than 5 million YouTube subscribers." &mdash; <strong>Ali Abdaal</strong>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- PRICING -->
+<section style="padding:7rem 2rem;background:var(--darker-bg)" id="pricing">
+    <div style="max-width:1000px;margin:0 auto">
+        <div class="fade-in">
+            <div class="section-badge"><span>PRICING</span></div>
+            <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:1.5rem">Why Work With Us?</h2>
+            <p style="color:var(--text-gray);font-size:1rem;line-height:1.8;margin-bottom:1rem;max-width:800px">While most "email guys" just write email copy and most "agencies" just run ads, we manage your newsletter end-to-end &mdash; with the only goal of turning your email list into a predictable source of engaged subscribers and revenue.</p>
+            <p style="color:var(--text-gray);font-size:1rem;line-height:1.8;margin-bottom:3rem;max-width:800px">While others focus on vanity metrics like open rates, we focus on what actually matters: converting your most engaged viewers into loyal customers without ever making them feel like they're being sold to.</p>
+        </div>
+        <div class="fade-in" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;margin-bottom:2.5rem">
+            <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem">
+                <h3 style="font-size:1.05rem;font-weight:800;margin-bottom:1.5rem;text-align:center">In-house (DIY)</h3>
+                <ul style="list-style:none">
+                    <li style="display:flex;gap:0.6rem;margin-bottom:0.75rem;font-size:0.88rem;color:var(--text-light-gray);line-height:1.5"><span style="color:#e74c3c;font-weight:700;flex-shrink:0">&#x2715;</span> Newsletter writer</li>
+                    <li style="display:flex;gap:0.6rem;margin-bottom:0.75rem;font-size:0.88rem;color:var(--text-light-gray);line-height:1.5"><span style="color:#e74c3c;font-weight:700;flex-shrink:0">&#x2715;</span> Growth marketer</li>
+                    <li style="display:flex;gap:0.6rem;margin-bottom:0.75rem;font-size:0.88rem;color:var(--text-light-gray);line-height:1.5"><span style="color:#e74c3c;font-weight:700;flex-shrink:0">&#x2715;</span> Technical setup</li>
+                    <li style="display:flex;gap:0.6rem;margin-bottom:0.75rem;font-size:0.88rem;color:var(--text-light-gray);line-height:1.5"><span style="color:#e74c3c;font-weight:700;flex-shrink:0">&#x2715;</span> 6&ndash;18 months to reach the ideal setup</li>
+                    <li style="display:flex;gap:0.6rem;margin-bottom:0.75rem;font-size:0.88rem;color:var(--text-light-gray);line-height:1.5"><span style="color:#e74c3c;font-weight:700;flex-shrink:0">&#x2715;</span> Trial and error</li>
+                    <li style="display:flex;gap:0.6rem;margin-bottom:0.75rem;font-size:0.88rem;color:var(--text-light-gray);line-height:1.5"><span style="color:#e74c3c;font-weight:700;flex-shrink:0">&#x2715;</span> Full-time marketing specialist role</li>
+                </ul>
+            </div>
+            <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:2rem">
+                <h3 style="font-size:1.05rem;font-weight:800;margin-bottom:1.5rem;text-align:center">Most Email Agencies</h3>
+                <ul style="list-style:none">
+                    <li style="display:flex;gap:0.6rem;margin-bottom:0.75rem;font-size:0.88rem;color:var(--text-light-gray);line-height:1.5"><span style="color:#e74c3c;font-weight:700;flex-shrink:0">&#x2715;</span> $3,000&ndash;$5,000 per month</li>
+                    <li style="display:flex;gap:0.6rem;margin-bottom:0.75rem;font-size:0.88rem;color:var(--text-light-gray);line-height:1.5"><span style="color:#e74c3c;font-weight:700;flex-shrink:0">&#x2715;</span> $2,000&ndash;$3,000 setup fee</li>
+                    <li style="display:flex;gap:0.6rem;margin-bottom:0.75rem;font-size:0.88rem;color:var(--text-light-gray);line-height:1.5"><span style="color:#e74c3c;font-weight:700;flex-shrink:0">&#x2715;</span> Revenue sharing</li>
+                    <li style="display:flex;gap:0.6rem;margin-bottom:0.75rem;font-size:0.88rem;color:var(--text-light-gray);line-height:1.5"><span style="color:#e74c3c;font-weight:700;flex-shrink:0">&#x2715;</span> 6&ndash;12 month contracts</li>
+                    <li style="display:flex;gap:0.6rem;margin-bottom:0.75rem;font-size:0.88rem;color:var(--text-light-gray);line-height:1.5"><span style="color:#e74c3c;font-weight:700;flex-shrink:0">&#x2715;</span> No guarantees</li>
+                </ul>
+            </div>
+            <div style="background:rgba(220,20,60,0.06);border:1px solid rgba(220,20,60,0.35);border-radius:16px;padding:2rem">
+                <h3 style="font-size:1.05rem;font-weight:800;margin-bottom:1.5rem;text-align:center;color:var(--crimson)">Working With Us</h3>
+                <ul style="list-style:none">
+                    <li style="display:flex;gap:0.6rem;margin-bottom:0.75rem;font-size:0.88rem;color:var(--text-light-gray);line-height:1.5"><span style="color:#27ae60;font-weight:700;flex-shrink:0">&#x2713;</span> Starting at $2,000/month. Period.</li>
+                    <li style="display:flex;gap:0.6rem;margin-bottom:0.75rem;font-size:0.88rem;color:var(--text-light-gray);line-height:1.5"><span style="color:#27ae60;font-weight:700;flex-shrink:0">&#x2713;</span> 100% Money-Back Guarantee</li>
+                    <li style="display:flex;gap:0.6rem;margin-bottom:0.75rem;font-size:0.88rem;color:var(--text-light-gray);line-height:1.5"><span style="color:#27ae60;font-weight:700;flex-shrink:0">&#x2713;</span> Done-for-you, end-to-end</li>
+                    <li style="display:flex;gap:0.6rem;margin-bottom:0.75rem;font-size:0.88rem;color:var(--text-light-gray);line-height:1.5"><span style="color:#27ae60;font-weight:700;flex-shrink:0">&#x2713;</span> Monthly retainer or one-off project</li>
+                    <li style="display:flex;gap:0.6rem;margin-bottom:0.75rem;font-size:0.88rem;color:var(--text-light-gray);line-height:1.5"><span style="color:#27ae60;font-weight:700;flex-shrink:0">&#x2713;</span> Focus on real results, not vanity metrics</li>
+                </ul>
+            </div>
+        </div>
+        <p class="fade-in" style="color:var(--text-gray);font-size:0.95rem;line-height:1.8;margin-bottom:1.25rem">Our services start at $2,000/month and we always strive to create a custom package for you depending on your needs. Monthly retainer or one-off project &mdash; we'll help you achieve your newsletter goals.</p>
+        <div class="fade-in" style="background:rgba(220,20,60,0.06);border:1px solid rgba(220,20,60,0.2);border-radius:12px;padding:1.5rem 2rem;font-size:0.95rem;color:var(--text-light-gray);line-height:1.7">
+            <strong style="color:var(--text-white)">And here's the kicker</strong> &mdash; if we don't hit our goals for your newsletter, you get every single penny back. No questions asked. Our goal is to add an ROI-positive investment to your portfolio and focus on actual results and tangible deliverables.
+        </div>
+    </div>
+</section>
+
+<!-- CTA / BOOK A CALL -->
+<section style="padding:7rem 2rem" id="book-call">
+    <div style="max-width:900px;margin:0 auto;text-align:center">
+        <div class="fade-in">
+            <div class="section-badge"><span>GET STARTED</span></div>
+            <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.2;margin-bottom:1.5rem">If You're Even 10% Curious,<br><span style="color:var(--crimson)">Book a 15-Minute Call</span></h2>
+            <p style="color:var(--text-gray);font-size:1.1rem;margin-bottom:3rem;line-height:1.7">Our calendar is completely open for you. Book any time you like &mdash; no pressure, no pitch, just a genuine conversation about how this would work for your business.</p>
+        </div>
+        <div class="fade-in" style="background:var(--darker-bg);border-radius:16px;border:1px solid rgba(255,255,255,0.08);padding:2rem;margin-bottom:1.5rem">
+            <div class="calendly-inline-widget" data-url="https://calendly.com/jkliszczak/send-scale-strategy-call" style="min-width:320px;height:700px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+        <div class="fade-in" style="color:var(--text-gray);font-size:0.95rem">
+            Or drop us a message at <a href="mailto:jakub.kliszczak@gmail.com" style="color:var(--crimson);text-decoration:none;font-weight:600">jakub.kliszczak@gmail.com</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div>
+            <div class="footer-logo"><span class="logo-accent">Send</span>&amp;<span>Scale</span></div>
+            <p style="color:var(--text-gray);font-size:0.9rem;margin-top:1rem;line-height:1.7">We build, grow, and monetize email newsletters for educational creators and entrepreneurs.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Navigation</h3>
+            <a href="/">Home</a>
+            <a href="/#services-offerings">Services</a>
+            <a href="/#case-study">Case Studies</a>
+            <a href="/#about">About</a>
+            <a href="/#faq">FAQ</a>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <a href="#book-call">Book a Call</a>
+            <a href="mailto:jakub.kliszczak@gmail.com">jakub.kliszczak@gmail.com</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Send&amp;Scale. All rights reserved.</p>
+        <p>Privacy Policy &middot; Terms of Service</p>
+    </div>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
